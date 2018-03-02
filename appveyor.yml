@@ -21,8 +21,6 @@ install:
   - "conda create -q -n test-environment python=%PYTHON_VERSION% numpy scipy matplotlib nose"
   - activate test-environment
 
-  - pip install -i https://pypi.anaconda.org/carlkl/simple mingwpy
-
   - pip install -r requirements.txt
   - python setup.py install
 
