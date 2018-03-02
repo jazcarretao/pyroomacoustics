@@ -24,7 +24,7 @@ install:
 
 test_script:
   - nosetests
-  - python.exe setup.py build_ext --inplace --compiler=mingw32
+  - python.exe setup.py build_ext --inplace
   - nosetests
 
 after_test:
