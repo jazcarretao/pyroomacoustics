@@ -7,6 +7,7 @@
 /* Windows trick begin */
 /* For compilation on windows, the python module init is mandatory */
 /* We add an empty one here so that the compiler doesn't complain  */
+#include <Python.h>
 #define INITERROR return NULL
 PyMODINIT_FUNC
 PyInit_libroom(void)
