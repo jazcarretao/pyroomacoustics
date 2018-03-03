@@ -4,26 +4,6 @@
 #include <stdlib.h>
 #include <stdio.h>
 
-/* Windows trick begin */
-/* For compilation on windows, the python module init is mandatory */
-/* We add an empty one here so that the compiler doesn't complain  */
-#ifdef _WIN32
-#include <Python.h>
-#if PY_MAJOR_VERSION >= 3
-#define INITERROR return NULL
-PyMODINIT_FUNC
-PyInit_libroom(void)
-#else
-#define INITERROR return
-void
-initlibroom(void)
-#endif
-{
-  return 0;
-}
-#endif
-/* Window trick end */
-
 // The number of threads to use for multithreading
 int num_threads = 1;
 

@@ -13,12 +13,7 @@ import glob
 path = os.path.dirname(__file__)
 
 try:
-    # we need the matching because python3 appends some os info to the name
-    match_files = glob.glob(path + "/libroom*so")
-    if len(match_files) < 1:
-        # try to match the windows file
-        match_files = glob.glob(path + "/libroom*win32*pyd")
-    libroom = _ctypes.cdll.LoadLibrary(match_files[0])
+    from . import libroom
     libroom_available = True
 except:
     libroom = False
