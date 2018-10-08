@@ -464,4 +464,3 @@ GEOMETRY UTILITIES
 '''
 def angle_from_points(x1, x2):
     return np.angle((x1[0, 0]-x2[0, 0]) + 1j*(x1[1, 0] - x2[1, 0]))
-

@@ -61,6 +61,8 @@ if __name__ == '__main__':
             help='STFT block size')
     parser.add_argument('-a', '--algo', type=str, default=choices[0], choices=choices,
             help='Chooses BSS method to run')
+    parser.add_argument('--whitening', action='store_true',
+            help='Performs prewhitening as a preprocessing step for BSS')
     parser.add_argument('--gui', action='store_true',
             help='Creates a small GUI for easy playback of the sound samples')
     parser.add_argument('--save', action='store_true',
@@ -148,8 +150,13 @@ if __name__ == '__main__':
     X = np.array([pra.stft(ch, L, L, transform=np.fft.rfft, zp_front=L//2, zp_back=L//2) for ch in mics_signals])
     X = np.moveaxis(X, 0, 2)
 
+    # Perform prewhitening
+    if args.whitening:
+        X = pra.bss.whitening(X)
+
     # Run BSS
     bss_type = args.algo
+
     if bss_type == 'auxiva':
         # Run AuxIVA
         Y = pra.bss.auxiva(X, n_iter=30, proj_back=True, callback=convergence_callback)
