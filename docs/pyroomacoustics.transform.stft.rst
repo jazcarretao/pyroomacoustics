@@ -1,5 +1,5 @@
-pyroomacoustics.transform.stft module
-=====================================
+STFT
+====
 
 .. automodule:: pyroomacoustics.transform.stft
     :members:

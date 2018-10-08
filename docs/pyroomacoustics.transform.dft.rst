@@ -1,5 +1,5 @@
-pyroomacoustics.transform.dft module
-====================================
+DFT
+===
 
 .. automodule:: pyroomacoustics.transform.dft
     :members:

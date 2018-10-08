@@ -1,13 +1,5 @@
-pyroomacoustics.transform package
-=================================
-
-Submodules
-----------
-
-.. toctree::
-
-   pyroomacoustics.transform.dft
-   pyroomacoustics.transform.stft
+Transforms
+==========
 
 Module contents
 ---------------
@@ -16,3 +8,12 @@ Module contents
     :members:
     :undoc-members:
     :show-inheritance:
+
+Algorithms
+----------
+
+.. toctree::
+
+   pyroomacoustics.transform.dft
+   pyroomacoustics.transform.stft
+
